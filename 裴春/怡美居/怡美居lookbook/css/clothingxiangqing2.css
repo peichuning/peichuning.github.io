@@ -1,0 +1,855 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+a{
+    text-decoration: none;
+    color:#6C6C6C;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/font_390555_ws2ewbdsr0iicnmi/iconfont.eot');
+    src: url('../font/font_390555_ws2ewbdsr0iicnmi/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/font_390555_ws2ewbdsr0iicnmi/iconfont.woff') format('woff'),
+    url('../font/font_390555_ws2ewbdsr0iicnmi/iconfont.ttf') format('truetype'),
+    url('../font/font_390555_ws2ewbdsr0iicnmi/iconfont.svg#iconfont') format('svg');
+}
+/*响应*/
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row{
+    width:auto;
+    height:auto;
+    margin-left:-15px;
+    margin-right:-15px;
+}
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+@media screen and (min-width:768px) {
+    .col-xs-1 {
+        width: 8.3333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-xs-2 {
+        width: 16.666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-xs-3 {
+        width: 25%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-xs-4 {
+        width: 33.3333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-5 {
+        width: 41.6666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-6 {
+        width: 50%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-7 {
+        width: 58.333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-8 {
+        width: 66.6666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-9 {
+        width: 75%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-10 {
+        width: 83.33333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-11 {
+        width: 91.666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-xs-12 {
+        width:100%;
+        height: auto;
+        float: left;
+        /*padding-left: 15px;*/
+        padding-right: 15px;
+    }
+}
+@media screen and (min-width:992px) {
+    .col-sm-1 {
+        width: 8.3333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-2 {
+        width: 16.666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-4 {
+        width: 33.3333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-5 {
+        width: 41.6666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-7 {
+        width: 58.333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-8 {
+        width: 66.6666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-9 {
+        width: 75%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-10 {
+        width: 83.33333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-11 {
+        width: 91.666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .col-md-1 {
+        width: 8.3333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-2 {
+        width: 16.666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-3 {
+        width: 25%;
+        height: auto;
+        float: left;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
+    }
+
+    .col-md-4 {
+        width: 30.3333333%;
+        height: auto;
+        float: left;
+        /*padding-left: 15px;*/
+        padding-right: 15px;
+    }
+
+    .col-md-5 {
+        width: 41.6666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-6 {
+        width: 50%;
+        height: auto;
+        float: left;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
+    }
+
+    .col-md-7 {
+        width: 58.333333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-8 {
+        width: 66.6666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-9 {
+        width: 75%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-10 {
+        width: 83.33333%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-11 {
+        width: 91.666667%;
+        height: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-12 {
+        width: 100%;
+        height: auto;
+        float: left;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
+    }
+}
+/*响应*/
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:20px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*导航开始*/
+.nav{
+    width: 100%;
+    height: 50px;
+    background: #222222;
+    /*border-bottom: 1px solid #000;*/
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.logo{
+    display: block;
+    width: 184px;
+    height: 50px;
+    background: #EA006E;
+    padding: 0 15px 0 15px;
+    float: left;
+}
+.logo img{
+    display: block;
+    width: 154px;
+    height: 38px;
+    margin: 6px auto;
+}
+.navbar{
+    width:auto;
+    height: 50px;
+    /*background: red;*/
+    float: right;
+}
+.navbarul{
+    width:auto;
+    height: 50px;
+    color: #6C6C6C;
+    /*background: gray;*/
+    float: left;
+}
+.navbarul li{
+    font-size: 16px;
+    padding: 15px 30px;
+    float: left;
+    position: relative;
+}
+.navbarul li a{
+    transition: all 0.5s;
+}
+.navbarul>li:hover a{
+    color: #fff;
+}
+.navbarul li a{
+    font-size: 14px;
+}
+
+.shopping span{
+    font-size: 14px;
+    transition: all 0.5s;
+}
+.shopping span:hover{
+    color: #fff;
+}
+.navbaruldown{
+    width: 100px;
+    height: 65px;
+    font-size: 14px;
+    background: #222222;
+    text-align: center;
+    position: absolute;
+    top: 50px;
+    left: -6px;
+    display: none;
+
+}
+.navbaruldown a{
+    display: block;
+    font-size: 14px;
+    margin: 2px 0 2px 0;
+    transition: all 0.5s;
+}
+.navbaruldown a:hover{
+    background: #333;
+}
+
+.buycar{
+    width: 250px;
+    height: 185px;
+    background: #000;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 10px;
+    display: none;
+}
+.buycar1{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.buycar1 img{
+    width: 32px;
+    height: 40px;
+    float: left;
+}
+.buycar1 p{
+    font-size: 14px;
+    color: #fff;
+    line-height: 40px;
+    float: left;
+    margin-left: 20px;
+}
+.buycar1 span{
+    color: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    float: right;
+}
+.buycar1 button{
+    float: right;
+}
+
+
+.navform{
+    width: auto;
+    height: 50px;
+    float: left;
+    /*background: blue;*/
+}
+.navbar input{
+    width: 200px;
+    height: 24px;
+    margin: 15px 0 0 30px;
+    color: #6C6C6C;
+    background:#222 ;
+    border: none;
+    border: 1px solid #555555;
+}
+.navbar button{
+    width: 106px;
+    height: 24px;
+    margin: 15px 0 0 6px;
+    color: #fff;
+    background:#222 ;
+    border: none;
+    border: 1px solid #555555;
+    transition: all 0.5s;
+}
+.navbar button:hover{
+    background:#333 ;
+}
+.navother{
+    width: auto;
+    height: 50px;
+    float: left;
+    margin-right: 20px;
+    line-height: 16px;
+}
+
+.navother li{
+    display: block;
+    float: left;
+    margin: 15px 0 0 20px;
+}
+.navother a{
+    transition: all 0.5s;
+}
+.navother li:hover a{
+    color: #fff;
+}
+
+.navmenu{
+    width: 44px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    float: right;
+    display: none;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 1px solid #4e4e4e;
+    border-radius: 10px;
+}
+.navmenu a span{
+    font-size: 22px;
+    color: #fff;
+}
+@media screen and (max-width: 1015px){
+    .navbar{
+        display: none;
+    }
+    .navmenu{
+        display: block;
+    }
+}
+
+/*.drop{*/
+/*width: 100%;*/
+/*height: auto;*/
+/*background: red;*/
+/*position: absolute;*/
+/*top: 50px;*/
+/*}*/
+/*导航结束*/
+/*denglu*/
+.bigdenglu{
+    width: 100%;
+    height: 672px;
+    background: rgba(124, 124, 124, 0.64);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left:0;
+    display: none;
+}
+.denglu{
+    width: 600px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px 0 rgb(149, 255, 255);
+    position: fixed;
+    top: 0;
+    left:calc(50% - 300px);
+    background: #fff;
+    padding: 8px;
+}
+.active{
+    display: block;
+}
+
+
+.dengluleft{
+    /*width: auto;*/
+    height: 100px;
+    /*background: red;*/
+}
+.dengluleft h4{
+    font: italic 25px/25px "Old Standard TT", serif;
+    margin-bottom: 10px;
+}
+.form-grop{
+    width: 80%;
+    margin-bottom: 20px;
+}
+.form-grop p{
+    font-size:14px;
+    margin-bottom: 5px;
+}
+.form-grop input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border: 1px solid #999999;
+}
+.latel button{
+    width: 50px;
+    height: 30px;
+    outline: none;
+    background: #EA006E;
+    color: #fff;
+    border: none;
+    margin: 0 auto;
+}
+.dengluright{
+    height: auto;
+}
+.dengluright h4{
+    font: italic 25px/25px "Old Standard TT", serif;
+    margin-bottom: 10px;
+}
+.dengluright p{
+    font-size:14px;
+    margin-bottom: 5px;
+}
+/*denglu*/
+/*商品详情*/
+.container{
+    padding-top: 50px;
+    overflow: hidden;
+}
+.xiangqing{
+    width: 100%;
+    height: auto;
+    /*background:red;*/
+    padding-top: 10px;
+    overflow: hidden;
+}
+.xiangqing p a{
+    font-size: 16px;
+    color: #EA006E;
+}
+.xiangqing p span{
+    font-size: 16px;
+}
+.xiangqing h3{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.xiangqingonly{
+    width: 100%;
+}
+.xiangqingonlyleft{
+    height: 450px;
+    background: url("../img/5.jpg") no-repeat;
+    background-size: cover;
+}
+.xiangqingonlyright{
+    height: 450px;
+    /*background: gray;*/
+    margin-left: 90px;
+}
+.xiangqingonlyright h1{
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+.xiangqingonlyright p span:nth-child(1){
+    font-size: 14px;
+    color: #AAAAAA;
+    text-decoration: line-through;
+}
+.xiangqingonlyright p span:nth-child(2){
+    font-size: 18px;
+}
+.addbuy{
+    width: 100%;
+    height: 30px;
+    /*background: red;*/
+    margin: 30px 0 20px 0;
+}
+.addbuy li{
+    width: 220px;
+    height: 30px;
+}
+.addbuy li input{
+    width: 120px;
+    height: 30px;
+    border: none;
+    border: 1px solid #868686;
+}
+.addbuy li:nth-child(1){
+    float: left;
+}
+.addbuy2{
+    text-align: center;
+    color: #fff;
+    letter-spacing: 10px;
+    line-height: 30px;
+    background: #EA006E;
+    float: right;
+}
+.addbuyconten p{
+    font-size: 14px;
+    line-height: 30px;
+}
+.addbuyhover{
+    width: 100%;
+    height: auto;
+}
+.addbuyhover li{
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #414141;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.addbuyhover li:nth-child(1):hover{
+    width: 110px;
+}
+.addbuyhover li:nth-child(2):hover{
+    width: 120px;
+}
+.addbuyhover li:nth-child(3):hover{
+    width: 130px;
+}
+
+.tuijian{
+    width: 100%;
+    height: 436px;
+    /*background: red;*/
+    margin-top: 46px;
+}
+.tuijian h3{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.tuijianonly{
+    width: 100%;
+    height: auto;
+}
+.tuijianonly li{
+    height: 350px;
+    background: blue;
+}
+.tuijianonly li:nth-child(1){
+    background: url("../img/4.jpg") no-repeat;
+    background-size: cover;
+}
+.tuijianonly li:nth-child(2){
+    background: url("../img/6.jpg") no-repeat;
+    background-size: cover;
+}
+.tuijianonly li:nth-child(3){
+    background: url("../img/4.jpg") no-repeat;
+    background-size: cover;
+}
+.tuijianonly li:nth-child(4){
+    background: url("../img/6.jpg") no-repeat;
+    background-size: cover;
+}
+
+/*商品详情*/
+/*foot*/
+.foot{
+    width: 100%;
+    height: 40px;
+    background: #222222;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+.footleft{
+    width: auto;
+    height: 40px;
+    padding-top:7px;
+    float: left;
+}
+.link{
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-left: 50px;
+}
+.footright{
+    width: auto;
+    height: 40px;
+    float: right;
+}
+.footleft input{
+    width: 200px;
+    height: 24px;
+    border: none;
+    background: #222222;
+    border: 1px solid #555555;
+    margin:0 10px 0 10px;
+}
+.footleft button{
+    width: 130px;
+    height: 24px;
+    color: #fff;
+    border: none;
+    background: #222222;
+    border: 1px solid #555555;
+}
+.footleft button:hover{
+    background: #333333;
+}
+.link a{
+    transition: all 0.5s;
+    margin-right: 10px;
+}
+.link a:hover{
+    color: #fff;
+}
+.link span{
+    margin-right: 10px;
+}
+.footright a{
+    display: block;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    border-radius: 6px;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    transition: all 0.5s;
+}
+.footright a:hover{
+    background: #999999;
+}
+.footright span{
+    line-height: 26px;
+}
+@media screen and (max-width: 1015px){
+    .foot{
+        width: 100%;
+        height: 73px;
+    }
+    .footleft{
+        width: 100%;
+        position: relative;
+    }
+    .footleft input{
+        width: 95%;
+    }
+    .footleft button{
+        margin-left: 30%;
+        margin-top: 10px;
+    }
+    .link{
+        display: none;
+    }
+    .footright{
+        display: none;
+    }
+}
+/*foot*/

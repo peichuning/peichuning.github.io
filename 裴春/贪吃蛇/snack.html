@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贪吃蛇</title>
+    <style>
+
+        /*body{*/
+            /*background: #ccc;*/
+        /*}*/
+        .scene {
+            width: 498px;
+            height: 500px;
+            border: 2px solid #ff0084;
+            /*background:#ccc;*/
+            float: left;
+        }
+
+        .block {
+            width: 25px;
+            height: 25px;
+            box-sizing: border-box;
+            /*border: 1px solid #a4a4a4;*/
+            border-radius: 50%;
+            float: left;
+        }
+
+        .snackbody {
+            background: url("2.jpg") no-repeat;
+            background-size:cover;
+        }
+
+        .snackhead {
+            background:url("2.gif") no-repeat;
+            /*background-size: 10px 10px;*/
+            background-size: cover;
+        }
+
+        .food{
+            background:url("1.gif") no-repeat;
+            background-size: cover;
+        }
+
+        .Game{
+            width: 502px;
+            height: 502px;
+            position: relative;
+            margin:  0 auto;
+        }
+        .game{
+            width: 502px;
+            height: 502px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url("1.jpg") no-repeat;
+            background-size:contain;
+        }
+        .strat{
+            width: 150px;
+            height: 50px;
+            font-size: 18px;
+            background: #e5e8ad;
+            line-height: 50px;
+            text-align: center;
+            margin-left: -75px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.6s;
+            position: absolute;
+            bottom: 60px;
+            left:50%
+        }
+        .strat:hover{
+            font-weight: 600;
+            background: #f6f37e;
+        }
+        .Game1{
+            width: 702px;
+            height: 502px;
+            display: none;
+        }
+        .scene1{
+            width: 200px;
+            height: 462px;
+            /*background: #acb6af;*/
+            float: left;
+            padding-top: 40px;
+        }
+        .scene2{
+            width: 120px;
+            height: 50px;
+            background: #fff;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        .scene3{
+            width: 120px;
+            height: 50px;
+            background: #fff;
+            margin: 0 auto;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="Game">
+    <div class="Game1">
+        <div class="scene"></div>
+        <div class="scene1">
+            <div class="scene2">分数:0</div>
+            <div class="scene3">开始游戏</div>
+        </div>
+    </div>
+
+   <div class="game">
+       <div class="strat">开始游戏</div>
+   </div>
+</div>
+</body>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    for (var i=0; i < 20; i++) {
+        for (var j=0; j < 20; j++) {
+            $("<div></div>").addClass("block").attr("id", j + "-" + i).appendTo(".scene");
+        }
+    }
+    var snackArr=[{x: 0, y: 0}, {x: 1, y: 0}, {x: 2, y: 0}];
+    var snackHead=snackArr[snackArr.length - 1];
+    function drawSnack() {
+        $(".snackbody").removeClass("snackbody");
+        $(".snackhead").removeClass("snackhead");
+        $.each(snackArr, function (index, value) {
+            $("#" + value.x + "-" + value.y).addClass("snackbody");
+        });
+        $("#" + snackHead.x + "-" + snackHead.y).addClass("snackhead");
+    }
+    drawSnack();
+    var dir="r";
+    function move() {
+        switch (dir) {
+            case "r":
+                snackHead={x: snackHead.x + 1, y: snackHead.y};
+                break;
+            case "l":
+                snackHead={x: snackHead.x - 1, y: snackHead.y};
+                break;
+            case "t":
+                snackHead={x: snackHead.x, y: snackHead.y - 1};
+                break;
+            case "b":
+                snackHead={x: snackHead.x, y: snackHead.y + 1};
+                break;
+        }
+        snackArr.push(snackHead);
+        var head=$("#"+snackHead.x+"-"+snackHead.y);
+        if(head.hasClass("snackbody")||head.length===0){
+            alert(`游戏结束 当前分数为：${fen}`);
+            location.reload();
+        }
+        if(head.hasClass("food")){
+            head.removeClass("food");
+            createFood();
+            $(".scene2").html(`分数:${fen}`)
+        }else{
+            snackArr.shift();
+        }
+        drawSnack();
+    }
+
+
+    $(".strat").click(function () {
+        $("body").css("background","#8ACABA")
+        $(".game").css("display","none")
+        $(".Game1").css("display","block")
+    })
+    $(".scene3").click(function () {
+        setInterval(move,500)
+    })
+
+    $(document).keydown(function (e) {
+        switch (e.keyCode) {
+            case 65:
+            case 37:
+                dir="l";
+                break;
+            case 87:
+            case 38:
+                dir="t";
+                break;
+            case 68:
+            case 39:
+                dir="r";
+                break;
+            case 83:
+            case 40:
+                dir="b";
+                break;
+        }
+    });
+    let fen=-1;
+    function createFood() {
+        fen++;
+        do {
+            var rx=Math.floor(Math.random() * 20);
+            var ry=Math.floor(Math.random() * 20);
+        }while($("#"+rx+"-"+ry).hasClass("snackbody"));
+        $("#"+rx+"-"+ry).addClass("food");
+    }
+    createFood();
+</script>
+</html>

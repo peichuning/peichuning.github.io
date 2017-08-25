@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天气预报</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .weather{
+            width: 740px;
+            height: 275px;
+            color: #fff;
+            background: #6CA9DE;
+            margin: 0 auto;
+        }
+        .weather1{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+        }
+        @keyframes late {
+            0%{
+                font-weight: bold;
+                transform: translateY(8px);
+            }
+            25%{
+                font-weight: bold;
+                transform: translateY(9px);
+            }
+            50%{
+                font-weight: bold;
+                transform: translateY(6px);
+            }
+            75%{
+                font-weight: bold;
+                transform: translateY(0px);
+            }
+            100%{
+                font-weight: bold;
+                transform: translateY(-3px);
+            }
+        }
+        .weather1 span{
+            display: block;
+            float: left;
+            animation: late 3s linear infinite;
+        }
+        .weather1 select{
+            width: 50px;
+            border: none;
+        }
+        .weather2{
+            width: auto;
+            height: auto;
+        }
+        .weather2 li{
+            width: 89px;
+            height: 225px;
+            color: #fff;
+            /*background: blue;*/
+            font-size: 14px;
+            float: left;
+            transition: all 0.3s;
+        }
+        .weather2 li:nth-child(1){
+            width: 206px;
+            height: 225px;
+        }
+        .weather2 li:nth-child(1) p{
+            font-size: 18px;
+        }
+        .weather2 li>p{
+            font-size: 12px;
+            text-align: center;
+            line-height: 35px;
+
+        }
+        .weather2 li>div>img{
+            display: block;
+            width: 60px;
+            height: 50px;
+            margin: 0 auto;
+        }
+
+        .weather0{
+            float: left;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="weather">
+    <div class="weather1">
+        <span>&nbsp;&nbsp;&nbsp;天气查询</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="weather0">
+            选择省份：<select name="province" id="provinces"></select>
+            选择城市：<select name="city" id="citys"></select>
+        </div>
+        <span class="time"></span>
+    </div>
+
+    <ul class="weather2">
+        <li>
+            <p class="week"></p>
+            <p class="date"></p>
+            <div><img src="" alt="" class="weatherIcon"></div>
+            <p class="wendu"></p>
+            <p class="tianqi"></p>
+            <p class="weifeng"></p>
+        </li>
+        <li>
+            <p class="week"></p>
+            <p class="date"></p>
+            <div><img src="" alt="" class="weatherIcon"></div>
+            <p class="wendu"></p>
+            <p class="tianqi"></p>
+            <p class="weifeng"></p>
+        </li>
+        <li>
+            <p class="week"></p>
+            <p class="date"></p>
+            <div><img src="" alt="" class="weatherIcon"></div>
+            <p class="wendu"></p>
+            <p class="tianqi"></p>
+            <p class="weifeng"></p>
+        </li>
+        <li>
+            <p class="week"></p>
+            <p class="date"></p>
+            <div><img src="" alt="" class="weatherIcon"></div>
+            <p class="wendu"></p>
+            <p class="tianqi"></p>
+            <p class="weifeng"></p>
+        </li>
+        <li>
+            <p class="week"></p>
+            <p class="date"></p>
+            <div><img src="" alt="" class="weatherIcon"></div>
+            <p class="wendu"></p>
+            <p class="tianqi"></p>
+            <p class="weifeng"></p>
+        </li>
+        <li>
+            <p class="week"></p>
+            <p class="date"></p>
+            <div><img src="" alt="" class="weatherIcon"></div>
+            <p class="wendu"></p>
+            <p class="tianqi"></p>
+            <p class="weifeng"></p>
+        </li>
+        <li>
+            <p class="week"></p>
+            <p class="date"></p>
+            <div><img src="" alt="" class="weatherIcon"></div>
+            <p class="wendu"></p>
+            <p class="tianqi"></p>
+            <p class="weifeng"></p>
+        </li>
+    </ul>
+</div>
+
+<!--http://api.jisuapi.com/weather/city?appkey=yourappkey               获取城市-->
+<!--http://api.jisuapi.com/weather/query?appkey=yourappkey&city=安顺     天气查询-->
+</body>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    var myDate=new Date()
+    $(".time").html(myDate.toLocaleString());
+    var colors=["#08b3de","#1ea4de","#2896de","#0d90de","#268fde","#537ede","#2668de"]
+    $(".weather2 li").mouseover(function () {
+        var index=$(this).index();
+        $(this).css("background",colors[index]).siblings().css("background","transparent");
+        $(".weather1").css("background",colors[index]);
+    })
+</script>
+<script>
+    var provinces=[];
+    var citys=[];
+    var data=[];
+    var city="北京"
+    $.ajax({
+        url:"http://api.jisuapi.com/weather/city?appkey=4aebc86212b953f1",
+        dataType:"jsonp",
+        success:function (r) {
+        data=r.result;
+        provinces=$.grep(r.result,function (value) {
+            if(value.parentid==="0"){
+                return true;
+            }
+        })
+        //console.log(provinces)
+
+        $.each(provinces,function (index,value) {
+            $("<option>").html(value.city).val(value.cityid).appendTo("#provinces");
+        })
+    }
+    });
+    $("#provinces").on("change blur",function () {
+        var id=$(this).val();
+        citys=$.grep(data,function (value) {
+            if(value.parentid===id){
+                return true;
+            }
+        })
+
+        $("#citys").empty();
+        $.each(citys,function (index,value) {
+            $("<option>").html(value.city).val(value.city).appendTo("#citys");
+        })
+    })
+    $("#citys").on("change blur",function () {
+        var city=$(this).val();
+        $.ajax({
+            url:"http://api.jisuapi.com/weather/query?appkey=4aebc86212b953f1&city="+city,
+            dataType:"jsonp",
+        success:function (r) {
+//            console.log(r)
+            if(r.status=="0"){
+                   $(".week").text(r.result.week);
+                   $(".date").text(r.result.date);
+                   var src = "img/weather/weathercn02/"+r.result.img + ".png";
+                   $(".weatherIcon").attr("src",src);
+                   $(".wendu").text(r.result.templow+"~"+r.result.temphigh+"℃");
+                   $(".tianqi").text(r.result.weather);
+                   $(".weifeng").text(r.result.winddirect+r.result.windpower);
+
+                   var daily=r.result.daily;
+                   var list=$(".weather2>li")
+
+                   $(daily).each(function (index,value) {console.log(value)
+                       list.each(function (i,v) {
+                           $(this).find(".week").text(daily[i].week);
+                           $(this).find(".date").text(daily[i].date);
+                           var srcl = "img/weather/weathercn02/"+daily[i].day.img + ".png";
+                           $(this).find(".weatherIcon").attr("src",srcl);
+                           $(this).find(".wendu").text(daily[i].night.templow+"~"+daily[i].day.temphigh+"℃");
+                           $(this).find(".tianqi").text(daily[i].day.weather);
+                           $(this).find(".weifeng").text(daily[i].day.winddirect+daily[i].day.windpower);
+                       })
+                   })
+            }
+        }
+    })
+    })
+</script>
+</html>

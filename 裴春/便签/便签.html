@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>便签</title>
+    <link rel="stylesheet" href="css/便签.css">
+</head>
+<body>
+<!--
+    1.添加事件
+    2.查看时间
+    3.操作事件的状态
+    4.标记关键事件
+    5.查看已完成
+    6.删除已完成
+    -->
+<!--
+jquery
+iconfont
+css3
+localstorage
+div+css
+-->
+<section class="left">
+    <h3>TODOLIST</h3>
+    <ul>
+        <li>查看待办事项</li>
+        <li>查看已完成</li>
+    </ul>
+</section>
+
+<section class="right">
+     <ul>
+         <li id="add">添加事件
+             <div class="close">x</div>
+             <textarea id="text"></textarea>
+             <div class="wenben">
+                 <span>0</span>/40
+             </div>
+             <div class="ok">确定</div>
+         </li>
+         
+         <li id="yes">已完成
+             <div id="yesonly">
+                 <div id="yesonlyyes">
+                     <!--<input type="checkbox">-->
+                     <!--<p>18797897566456456455445645213131</p>-->
+                     <!--<time>2017.8.11</time>-->
+                 </div>
+             </div>
+             <input type="button" value="删除已完成事项" id="del">
+             <input type="button" value="添加" id="tianjia1">
+         </li>
+         
+         <li id="no">未完成
+             <div id="noonly">
+                 <div id="noonlyno">
+                     <!--<input type="checkbox">-->
+                     <!--<p>18797897566456456455445645213131</p>-->
+                     <!--<time>2017.8.11</time>-->
+                 </div>
+             </div>
+             <input type="button" value="移动到已完成事项" id="move">
+             <input type="button" value="添加" id="tianjia">
+         </li>
+     </ul>
+</section>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bq.js"></script>
+</html>
