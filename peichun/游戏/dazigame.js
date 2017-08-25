@@ -45,7 +45,8 @@ class Game{
 
         let randomTop=Math.random()*100;
         newdiv.style.top=randomTop+"px";
-        newdiv.style.backgroundImage=`url(images/${randomLetter}.png)`//引入字母图片
+        newdiv.innerHTML=randomLetter;
+        //newdiv.style.backgroundImage=`url(images/${randomLetter}.png)`//引入字母图片
         this.left.appendChild(newdiv);
     }
 
